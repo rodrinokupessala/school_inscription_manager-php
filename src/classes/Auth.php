@@ -50,7 +50,7 @@ private $secure;
                 $user_browser = $_SERVER['HTTP_USER_AGENT'];
                 $_SESSION['uid']=$result['uid'];
                 $_SESSION['login_string']=hash('sha512', $hash . $user_browser);
-
+                $_SESSION['user']=$result['username'];
                 $currTime = time();
              
 
@@ -89,7 +89,7 @@ function register($username, $password, $passwordConfirm, $email, $conn){
         // prepare sql and bind parameters
         try{
             if($this->exitsUser($username,$conn)==true){
-                throw new Exception('USER-EXITS', 1);
+                return [header('X-PHP-Response-Code: 500', true, 500),http_response_code(500)];
             }
             $pw=password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conn->prepare("INSERT INTO users (username, password, email)

@@ -20,21 +20,7 @@ require_once "./../config/header.php";
 </a>
    </li>
 
-   <li>
-<a href="#">
-<i class="bx bx-box"></i>
-<span class="link_name">Material</span>
-</a>
-   </li>
-
-
-
-   <li>
-<a href="#">
-<i class="bx bx-pie-chart-alt-2"></i>
-<span class="link_name">Actividades</span>
-</a>
-   </li>
+ 
 
    <li>
   <a href="#">
@@ -42,19 +28,7 @@ require_once "./../config/header.php";
   <span class="link_name">Users</span>
   </a>
    </li>
-
-   <li>
-<a href="#">
-<i class="bx bx-message"></i>
-<span class="link_name">Chat</span>
-</a>
-   </li>
-   <li>
-<a href="#">
-<i class="bx bx-video-recording" style="color:red;"></i>
-<span class="link_name">Conferências</span>
-</a>
-   </li>
+ 
 
    <li>
 <a href="#">
@@ -73,7 +47,8 @@ require_once "./../config/header.php";
    <li>
 <a href="#">
 <i class="bx bx-log-out"></i>
-<span class="link_name">Log out</span>
+<a href="auth/logout.php"><span class="link_name" >Log out</span></a>
+
 </a>
    </li>
  </ul>
@@ -92,7 +67,7 @@ require_once "./../config/header.php";
     </div>
     <div class="profile-details">
   <img src="./../img/user.jpg" alt="Logo">
-      <span class="admin_name">Rodrino Adolfo</span>
+      <span class="admin_name"><?php echo htmlentities( $_SESSION['user']);?></span>
       <i class="bx bx-chevron-down"></i>
     </div>
   </nav>
@@ -152,92 +127,7 @@ require_once "./../config/header.php";
 
     </div>
     <div class="material-boxes">
-<div class="recent-sale box">
-  <div class="title">Atividades Recentes</div>
-  <div class="sales-details">
-    <ul class="details">
-      <li class="topic">Date  </li>
-        <li><a href="#">02 de Jane 2021</a>  </li>
-          <li><a href="#">02 de Jane 2021</a>  </li>
-            <li><a href="#">02 de Jane 2021</a>  </li>
-              <li><a href="#">02 de Jane 2021</a>  </li>
-                <li><a href="#">02 de Jane 2021</a>  </li>
-    </ul>
-
-    <ul class="details">
-      <li class="topic">Custumers  </li>
-        <li><a href="#">Rodrino Adolfo</a>  </li>
-          <li><a href="#">Adilson Kupessala</a>  </li>
-            <li><a href="#">Anael Kupessala</a>  </li>
-              <li><a href="#">Dionísia Ndala</a>  </li>
-                <li><a href="#">Nádia Kupessala</a>  </li>
-    </ul>
-
-    <ul class="details">
-      <li class="topic">Sale  </li>
-        <li><a href="#">Delivered</a>  </li>
-          <li><a href="#">Delivered</a>  </li>
-            <li><a href="#">Delivered</a>  </li>
-              <li><a href="#">Delivered</a>  </li>
-                <li><a href="#">Delivered</a>  </li>
-    </ul>
-    <ul class="details">
-      <li class="topic">Total  </li>
-        <li><a href="#">$1000,00</a>  </li>
-          <li><a href="#">$1000,00</a>  </li>
-            <li><a href="#">$1000,00</a>  </li>
-              <li><a href="#">$1000,00</a>  </li>
-                <li><a href="#">$1000,00</a>  </li>
-    </ul>
-  </div>
-  <div class="button">
-    <a href="#">See All</a>
-
-  </div>
 </div>
-
-<div class="top-professores box">
-  <div class="title">Meus Docentes</div>
-  <div class="sale-details">
-    <ul>
-      <li>
-  <a href="#">
-  <img src="./../img/user.jpg" alt="">
-  <span class="product_name">Gucci Wome</span>
-  </a>
-  <span class="price">!4.66</span>
-      </li>
-
-      <li>
-  <a href="#">
-  <img src="./../img/user.jpg" alt="">
-  <span class="product_name">Gucci Wome</span>
-  </a>
-  <span class="price">!4.66</span>
-      </li>
-
-      <li>
-  <a href="#">
-  <img src="./../img/user.jpg" alt="">
-  <span class="product_name">Gucci Wome</span>
-  </a>
-  <span class="price">!4.66</span>
-      </li>
-      <li>
-  <a href="#">
-  <img src="./../img/user.jpg" alt="">
-  <span class="product_name">Gucci Wome</span>
-  </a>
-  <span class="price">!4.66</span>
-      </li>
-    </ul>
-  </div>
-</div>
-    </div>
-</div>
-<div id="saved-audio-messages">
-     <h2>Saved messages</h2>
-   </div>
 </section>
 
 
