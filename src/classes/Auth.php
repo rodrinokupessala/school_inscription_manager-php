@@ -45,7 +45,8 @@ private $secure;
             $hash=$result['password'];
     
             if (password_verify($password, $hash)) {
-                $this->sec_session_start('');
+               // $this->sec_session_start('');
+               session_start();
                 $user_browser = $_SERVER['HTTP_USER_AGENT'];
                 $_SESSION['uid']=$result['uid'];
                 $_SESSION['login_string']=hash('sha512', $hash . $user_browser);
