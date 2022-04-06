@@ -1,0 +1,22 @@
+{
+    "name": "rodrinokupessala/school_inscription_manager",
+    "description": "for beginners",
+    "license": "MINT",
+    "authors": [
+        {
+            "name": "rodrinokupessala",
+            "email": "rkupessala@outlook.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    },
+     
+    "autoload": {
+        "psr-4": {
+            "school_inscription_manager\\classes\\": "src"
+        }
+    }
+    
+}

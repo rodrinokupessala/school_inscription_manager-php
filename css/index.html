@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/boxicons.css">
+    <meta name="viewport" content="with=device-with,initial-scale=1.0">
+    <title></title>
+  </head>
+  <body>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+
+    }
+    body{
+      min-height: 100vh;
+      width: 100%;
+    }
+    .sidebar{
+      position: fixed;
+      height: 100%;
+      width: 240px;
+      background: #0A2558;
+      transition: all 0.5s ease;
+    }
+    .sidebar .logo-details{
+      height: 80px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: solid 2px yellow;
+    }
+    .sidebar.active{
+      width: 60px;
+    }
+    .sidebar .logo-details i{
+      font-size: 28px;
+      font-weight: 500;
+      color: yellow;
+
+      min-width: 60px;
+      text-align: center;
+    }
+    .sidebar .logo-details .logo_name{
+      font-size: 24px;
+      font-weight: 500;
+      color: #333;
+      margin-left: 8px;
+
+    }
+  a{text-decoration: none;}
+    .sidebar .nav-links{
+      margin-top: 16px
+    }
+    .sidebar .nav-links li{
+      height: 50px;
+      width: 100%;
+      list-style: none;
+
+    }
+    .sidebar .nav-links li a{
+
+      height: 100%;
+      width: 100%;
+    display: flex;
+    align-items: center;
+text-decoration: none;
+transition: all 0.4s ease;
+
+    }
+    .sidebar .nav-links li a:hover{
+      background: yellow;
+      color:black;
+    }
+    .sidebar .nav-links li a i{
+
+      min-width: 60px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+    }
+    .sidebar .nav-links li a .link_name{
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    /* hom section*/
+    .home-section{
+      background: #f5f5f5;
+      position: relative;
+      min-height: 100vh;
+      width: calc(100% - 240px);
+      left:240px;
+      transition: all 0.5s ease;
+    }
+    .sidebar.active ~ .home-section{
+      width: calc(100% - 10px);
+      left:70px;
+    }
+    .home-section nav{
+
+    width: calc(100% - 10px);
+    left: 100px;
+
+      height: 80px;
+      background: #fff;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.5s ease;
+      border-bottom: solid 2px yellow;
+    }
+    .sidebar.active ~ .home-section nav{
+      width: calc(100% - 10px);
+      left: 10px;
+    }
+    .home-section nav .sidebar-buttom{
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 500;
+
+    }
+    .home-section nav .sidebar-buttom i{
+      font-size: 35px;
+      margin-right: 10px;
+
+    }
+    .home-section nav .search-box{
+
+      height: 50px;
+      width: 550px;
+      margin: 0 20px;
+      position: relative;
+    }
+    nav .search-box input{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+      padding: 0 15px;
+      font-size: 17px;
+
+      background: #f5f6fa;
+      border: 2px solid #efeef1;
+      outline: none;
+
+    }
+    nav .search-box .bx-search{
+      position: absolute;
+      right: 5px;
+      top:50%;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 40px;
+      background: #2697ff;
+      border-radius: 6px;
+      color:#fff;
+      font-size: 22px;
+      line-height: 40px;
+      text-align: center;
+    }
+    .home-section nav .profile-details{
+      display: flex;
+      align-items: center;
+      height: 50px;
+      min-width: 190px;
+      background: #f5f6fa;
+      border: 2px solid #efeef1;
+      border-radius: 6px;
+      padding: 0 15px 0 2px;
+    }
+    nav .profile-details img{
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    nav .profile-details .admin_name{
+      font-size: 15px;
+      font-weight: 500;
+      color:#333;
+      margin: 0 10px;
+    }
+    nav .profile-details i{
+      color: #333;
+      font-size: 25px;
+    }
+    .home-section .home-content{
+      position: relative;
+      padding-top: 100px;
+
+    }
+    .home-content .overview-boxes{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+    .home-content .overview-boxes .box_topic{
+      font-size: 20px;
+      font-weight: 500;
+    }
+      .home-content .overview-boxes .box{
+        width: calc(100% /4 -15px);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 14px;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(255,0,0,0.5)
+      }
+
+      .home-content .overview-boxes .number{
+        font-size: 35px;
+        font-weight: 500;
+        margin-top: -5px;
+        display: inline-block;
+
+      }
+      .overview-boxes  .indicator{
+        display: flex;
+        align-items: center;
+      }
+    .overview-boxes  .indicator i{
+        height: 20px;
+        width: 20px;
+        background: #8fdacb;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 20px;
+        margin-right: 5px;
+      }
+      .overview-boxes  .indicator .text{
+        font-size: 12px;
+      }
+      .overview-boxes .box .cart{
+        font-size: 32px;
+        font-weight: 500;
+        height: 50px;
+        width: 50px;
+        background: #cce5ff;
+        color: #66b0ff;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 12px;
+      }
+.JS{
+  color: #333;
+  background: yellow;
+  border-radius: 50%;
+}
+.home-section .material-boxes {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px
+
+}
+.home-section .material-boxes .recent-sale{
+  width: 65%;
+  background: #fff;
+  border-radius: 12px;
+  box-sizing: 0 5px 10px rgba(0, 0, 0, 1);
+  padding: 20px;
+}
+.home-section .material-boxes .sales-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ .home-section .material-boxes .box .title{
+   font-size: 24px;
+   font-weight: 500;
+ }
+ .home-section .material-boxes .box .topic{
+   font-size: 24px;
+   font-weight: 500;
+ }
+ .home-section .material-boxes .box li{
+   list-style: none;
+   margin: 8px 0;
+ }
+ .home-section .material-boxes .box a{
+   color:#333;
+   font-size: 24px;
+   font-weight: 400;
+   text-decoration: none;
+ }
+ /*rightside*/
+ .home-section .material-boxes .top-professores{
+   width: 35%;
+   margin-left: 20px;
+   background: #fff;
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+   padding: 20px;
+   border-radius: 12px;
+ }
+.material-boxes .button{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+.material-boxes .recent-sale .button a{
+  font-size: 15px;
+  font-weight: 400;
+  color:#fff;
+  background: #0a2558;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+}
+.material-boxes .button a:hover{
+  background: #0d3073;
+}
+.material-boxes .top-professores li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.material-boxes .top-professores li a{
+  display: flex;
+  align-items: center;
+}
+.material-boxes .top-professores img{
+  margin-right: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+      @media (max-width:1216px) {
+        .sidebar{
+          width: 100px;
+        }
+.sidebar.active{
+  width: 240px;
+}
+        .home-section{
+
+          width: calc(100% - 60px);
+          left:60px;
+
+        }
+        .home-section nav{
+
+        width: calc(100% - 7%);
+        left: 6%;
+        }
+        .sidebar.active ~ .home-section nav{
+          width: calc(100% - 40%);
+          left: 20%;
+
+        }
+
+      }
+
+    @media (max-width:1018px) {
+      .home-content .overview-boxes .box{
+        width: calc(100% / 2 - 15px);
+        margin-bottom: 15px;
+      }
+    }
+    @media (max-width:1078px) {
+      .home-section .material-boxes{
+        flex-direction: column;
+      }
+      .home-section .material-boxes .box{
+        margin-bottom:20px;
+        width: 100%;
+        overflow-x: scroll;
+      }
+    .home-section
+      .material-boxes.top-professores{
+    margin-left: 0;
+      }
+    }
+
+    @media (max-width:658px) {
+      .home-section nav .sidebar-button .dashboard,
+      nav .profile-details .admin_name,
+        nav .profile-detail i{
+        display: none;
+      }
+      .home-section nav .profile-details{
+        min-width: 50px;
+        height: 50px;
+      }
+        .home-section  .overview-boxes .box{
+          width: 100%;
+        }
+      .home-section .material-boxes .sales-details{
+        width: 590px;
+      }
+
+    }
+    </style>
+<div class="sidebar">
+  <div class="logo-details">
+    <a href="#"><i class="bx bx-book"></i>
+<span class="logo_name JS">JS</span>
+</a>
+  </div>
+ <ul class="nav-links">
+   <li>
+<a href="#">
+<i class="bx bx-grid-alt"></i>
+<span class="link_name">Dashboard</span>
+</a>
+   </li>
+
+   <li>
+<a href="#">
+<i class="bx bx-box"></i>
+<span class="link_name">Material</span>
+</a>
+   </li>
+
+
+
+   <li>
+<a href="#">
+<i class="bx bx-pie-chart-alt-2"></i>
+<span class="link_name">Actividades</span>
+</a>
+   </li>
+
+   <li>
+  <a href="#">
+  <i class="bx bx-user"></i>
+  <span class="link_name">Users</span>
+  </a>
+   </li>
+
+   <li>
+<a href="#">
+<i class="bx bx-message"></i>
+<span class="link_name">Chat</span>
+</a>
+   </li>
+   <li>
+<a href="#">
+<i class="bx bx-video-recording" style="color:red;"></i>
+<span class="link_name">Conferências</span>
+</a>
+   </li>
+
+   <li>
+<a href="#">
+<i class="bx bx-heart"></i>
+<span class="link_name">Favorite</span>
+</a>
+   </li>
+
+   <li>
+<a href="#">
+<i class="bx bx-cog"></i>
+<span class="link_name">Settings</span>
+</a>
+   </li>
+
+   <li>
+<a href="#">
+<i class="bx bx-log-out"></i>
+<span class="link_name">Log out</span>
+</a>
+   </li>
+ </ul>
+</div>
+<!--home content-->
+<section class="home-section">
+
+  <nav>
+    <div class="sidebar-buttom">
+      <i class="bx bx-menu sidebarBtn"></i>
+      <span class="dashboard">Dashboard</span>
+    </div>
+    <div class="search-box">
+      <input type="text" name="" value="" placeholder="Search...">
+      <i class="bx bx-search"></i>
+    </div>
+    <div class="profile-details">
+  <img src="./user.jpg" alt="Logo">
+      <span class="admin_name">Rodrino Adolfo</span>
+      <i class="bx bx-chevron-down"></i>
+    </div>
+  </nav>
+
+
+  <div class="home-content">
+    <div class="overview-boxes">
+
+      <div class="box">
+        <div class="left-side">
+          <div class="box_topic">Order List</div>
+          <div class="number">40,878</div>
+          <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bx bxs-cart-alt cart"></i>
+      </div>
+
+
+      <div class="box">
+        <div class="left-side">
+          <div class="box_topic">Order List</div>
+          <div class="number">40,878</div>
+          <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bx bxs-cart-alt cart"></i>
+      </div>
+
+      <div class="box">
+        <div class="left-side">
+          <div class="box_topic">Order List</div>
+          <div class="number">40,878</div>
+          <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bx bxs-cart-alt cart"></i>
+      </div>
+
+      <div class="box">
+        <div class="left-side">
+          <div class="box_topic">Order List</div>
+          <div class="number">40,878</div>
+          <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+          </div>
+        </div>
+        <i class="bx bxs-cart-alt cart"></i>
+      </div>
+
+    </div>
+    <div class="material-boxes">
+<div class="recent-sale box">
+  <div class="title">Atividades Recentes</div>
+  <div class="sales-details">
+    <ul class="details">
+      <li class="topic">Date  </li>
+        <li><a href="#">02 de Jane 2021</a>  </li>
+          <li><a href="#">02 de Jane 2021</a>  </li>
+            <li><a href="#">02 de Jane 2021</a>  </li>
+              <li><a href="#">02 de Jane 2021</a>  </li>
+                <li><a href="#">02 de Jane 2021</a>  </li>
+    </ul>
+
+    <ul class="details">
+      <li class="topic">Custumers  </li>
+        <li><a href="#">Rodrino Adolfo</a>  </li>
+          <li><a href="#">Adilson Kupessala</a>  </li>
+            <li><a href="#">Anael Kupessala</a>  </li>
+              <li><a href="#">Dionísia Ndala</a>  </li>
+                <li><a href="#">Nádia Kupessala</a>  </li>
+    </ul>
+
+    <ul class="details">
+      <li class="topic">Sale  </li>
+        <li><a href="#">Delivered</a>  </li>
+          <li><a href="#">Delivered</a>  </li>
+            <li><a href="#">Delivered</a>  </li>
+              <li><a href="#">Delivered</a>  </li>
+                <li><a href="#">Delivered</a>  </li>
+    </ul>
+    <ul class="details">
+      <li class="topic">Total  </li>
+        <li><a href="#">$1000,00</a>  </li>
+          <li><a href="#">$1000,00</a>  </li>
+            <li><a href="#">$1000,00</a>  </li>
+              <li><a href="#">$1000,00</a>  </li>
+                <li><a href="#">$1000,00</a>  </li>
+    </ul>
+  </div>
+  <div class="button">
+    <a href="#">See All</a>
+
+  </div>
+</div>
+
+<div class="top-professores box">
+  <div class="title">Meus Docentes</div>
+  <div class="sale-details">
+    <ul>
+      <li>
+  <a href="#">
+  <img src="./user.jpg" alt="">
+  <span class="product_name">Gucci Wome</span>
+  </a>
+  <span class="price">!4.66</span>
+      </li>
+
+      <li>
+  <a href="#">
+  <img src="./user.jpg" alt="">
+  <span class="product_name">Gucci Wome</span>
+  </a>
+  <span class="price">!4.66</span>
+      </li>
+
+      <li>
+  <a href="#">
+  <img src="./user.jpg" alt="">
+  <span class="product_name">Gucci Wome</span>
+  </a>
+  <span class="price">!4.66</span>
+      </li>
+      <li>
+  <a href="#">
+  <img src="./user.jpg" alt="">
+  <span class="product_name">Gucci Wome</span>
+  </a>
+  <span class="price">!4.66</span>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+</div>
+<div id="saved-audio-messages">
+     <h2>Saved messages</h2>
+   </div>
+</section>
+
+
+
+
+
+
+<script>
+  let sidebar=document.querySelector(".sidebar")
+  let sidebarBtn=document.querySelector(".sidebarBtn")
+  sidebarBtn.onclick=function() {
+    sidebar.classList.toggle("active")
+  }
+
+
+  const populateAudioMessages = () => {
+        return fetch('/messages').then(res => {
+          if (res.status === 200) {
+            return res.json().then(json => {
+              json.messageFilenames.forEach(filename => {
+                let audioElement = document.querySelector(`[data-audio-filename="${filename}"]`);
+                if (!audioElement) {
+                  audioElement = document.createElement('audio');
+                  audioElement.src = `/messages/${filename}`;
+                  audioElement.setAttribute('data-audio-filename', filename);
+                  audioElement.setAttribute('controls', true);
+                  savedAudioMessagesContainer.appendChild(audioElement);
+                }
+              });
+            });
+          }
+          console.log('Invalid status getting messages: ' + res.status);
+        });
+      };
+
+      populateAudioMessages();
+</script>
+  </body>
+</html>
